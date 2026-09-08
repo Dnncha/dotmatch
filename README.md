@@ -56,7 +56,8 @@ newly tagged version has not reached Bioconda yet, use PyPI or the source build.
 Check the installed version. The Bioconda recipe includes `osx-arm64` for Apple Silicon.
 Review the [packaging details](https://dotmatch.readthedocs.io/en/latest/packaging.html)
 for platform and container verification. See the [installation guide](https://dotmatch.readthedocs.io/en/latest/getting-started.html)
-for platform details, source builds and the third-party Homebrew tap. The desktop Workbench is developed separately; the commands below use the core CLI.
+for platform details, source builds and the third-party Homebrew tap. The desktop Workbench is developed separately as `dotmatch-community`; the
+commands below use the core CLI.
 
 ## Count a CRISPR screen
 
