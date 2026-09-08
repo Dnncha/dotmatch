@@ -14,6 +14,13 @@ For every read, DotMatch records one of four outcomes:
 Ambiguous and invalid reads stay visible in the outputs. They are not quietly
 added to a target count.
 
+## Choose the inputs and assignment rule
+
+A useful run starts with a known target library, a defined read window, and an
+explicit matching policy. Review those choices before interpreting a count
+matrix. A uniquely assigned read is compatible with one target under that
+policy; it does not establish the read's biological origin.
+
 ## Start with a real run
 
 Install the current PyPI package:
@@ -32,9 +39,7 @@ Then follow [Getting started](getting-started.md) for a small count or
 demultiplexing run. If you already know which command you need, go straight to
 the [command reference](command-reference.md). Coding and scientific agents can
 use the [Agent guide](agent-guide.md) or the public capability manifest for
-versioned task routing with explicit inputs, outputs, and limitations. DotMatch
-0.4 adds `dotmatch agent tools --json` and six local structured tools for a
-full prepare, preflight, run, review, and handoff workflow.
+versioned task routing with explicit inputs, outputs, and limitations. Use `dotmatch agent tools --json` to inspect the tools available in your installed version.
 
 ## Choose a workflow
 
@@ -77,6 +82,13 @@ comparisons, checked inline-barcode examples, and the bounded GSE146194
 multi-guide direct-capture case study. Other assay types and
 experimental backends have narrower test coverage; those limits are described
 in [Scope and limitations](trust-and-scope.md).
+
+## Related research
+
+[Cheerful Duck Research](https://cheerfulduck.com/research) collects our
+bioinformatics investigations, reproduction material, and corrections. Use the
+project's benchmark reports for DotMatch-specific evidence and the methods guide
+below when citing a run.
 
 ## Help and citation
 

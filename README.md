@@ -1,6 +1,6 @@
 # DotMatch
 
-**Count your guides. Account for every read.**
+CRISPR guide counts and assignment QC from FASTQ reads.
 
 DotMatch turns FASTQ reads and a known guide library into count tables and
 assignment QC. Use it for **CRISPR guide counting**, fixed-position **barcode
@@ -17,7 +17,7 @@ on Linux and macOS and writes MAGeCK-compatible counts.
 [Documentation](https://dotmatch.readthedocs.io/en/latest/) ·
 [Methods and results](https://dotmatch.readthedocs.io/en/latest/benchmarks/crispr_comparison/README.html)
 
-## Why use DotMatch?
+## What the counts mean
 
 An assigned-read percentage cannot tell you which targets gained counts, which
 reads fit several targets, or whether a more permissive matching rule changed the
@@ -56,12 +56,17 @@ newly tagged version has not reached Bioconda yet, use PyPI or the source build.
 Check the installed version. The Bioconda recipe includes `osx-arm64` for Apple Silicon.
 Review the [packaging details](https://dotmatch.readthedocs.io/en/latest/packaging.html)
 for platform and container verification. See the [installation guide](https://dotmatch.readthedocs.io/en/latest/getting-started.html)
-for platform details, source builds and the third-party Homebrew tap. The optional
-[desktop Workbench](https://github.com/dnncha/dotmatch-community) is maintained separately.
+for platform details, source builds and the third-party Homebrew tap. The desktop Workbench is developed separately; the commands below use the core CLI.
 
 ## Count a CRISPR screen
 
-Prepare a guide CSV/TSV and FASTQ files. Start a new assay project:
+You need a guide CSV/TSV with target sequences and the FASTQ files from your
+screen. The [first-run tutorial](https://dotmatch.readthedocs.io/en/latest/tutorials/crispr-count-first-run.html)
+explains the library columns and provides a small example. Keep biological
+sample names distinct from sequencing filenames when preparing the library and
+sample configuration.
+
+Start a new assay project:
 
 ```bash
 dotmatch crispr quickstart \
@@ -124,7 +129,14 @@ This is sensitivity analysis, not an estimate of biological accuracy.
 Feature matrices require upstream cell identifiers and extracted feature windows.
 They do not perform cell calling, UMI deduplication or perturbation-effect analysis.
 
-## Reproduce the evidence
+## Research and reproducibility
+
+[Cheerful Duck Research](https://cheerfulduck.com/research) publishes our
+bioinformatics software investigations, reproducible examples, and follow-up
+corrections. For DotMatch-specific methods and measurements, use the reports
+below and record the release and assignment policy used in your own run.
+
+### Reproduce a comparison
 
 The [benchmark reports](https://dotmatch.readthedocs.io/en/latest/benchmarks/README.html)
 include commands, hardware and assignment rules. Those reports cover the tested workloads;
